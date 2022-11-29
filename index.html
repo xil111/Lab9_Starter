@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "9c73f61559814bc99d5815f418234dfe"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+                          
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,6 +109,82 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    errorBtns[0].addEventListener("click", (event) => {
+      console.log('Console log demo');
+    })
+    errorBtns[1].addEventListener("click", (event) => {
+      console.error('Console error demo');
+    })
+    errorBtns[2].addEventListener("click", (event) => {
+      console.count();
+    })
+    errorBtns[3].addEventListener("click", (event) => {
+      console.warn('Console warn demo');
+    })
+    errorBtns[4].addEventListener("click", (event) => {
+      let num1 = 1;
+      let num2 = 1;
+      let errorMessage = "1 is not equal to 2";
+      console.assert(num1 === num2, {
+        num1,
+        num2, 
+        errorMessage
+      });
+    })
+    errorBtns[5].addEventListener("click", (event) => {
+      console.clear();
+    })
+    errorBtns[6].addEventListener("click", (event) => {
+      console.dir(errorBtns[6]);
+    })
+    errorBtns[7].addEventListener("click", (event) => {
+      console.dirxml(errorBtns[7]);
+    })
+    errorBtns[8].addEventListener("click", (event) => {
+      console.group();
+    })
+    errorBtns[9].addEventListener("click", (event) => {
+      console.groupEnd();
+    })
+    errorBtns[10].addEventListener("click", (event) => {
+      var cart = [
+        {
+          name: 'carrot',
+          count: 1,
+        },
+        {
+          name: 'watermelon',
+          count: 2,
+        },
+        {
+          name: 'milk',
+          count: 1,
+        }
+      ];
+      console.table(cart);
+    })
+    errorBtns[11].addEventListener("click", (event) => {
+      console.time();
+    })
+    errorBtns[12].addEventListener("click", (event) => {
+      console.timeEnd();
+    })
+    errorBtns[13].addEventListener("click", (event) => {
+      function first() {
+        second();
+      }
+      function second(){
+        third();
+      }
+      function third(){
+        console.trace();
+      }
+      first();
+    })
+    errorBtns[14].addEventListener("click", (event) => {
+      TrackJS.track('TrackJS');
+      hello();
+    })
   </script>
 </body>
 
