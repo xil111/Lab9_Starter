@@ -104,6 +104,17 @@
       let operator = document.querySelector('#operator').value;
       output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
     });
+    try{
+      if(isNaN(firstNum) || isNaN(secondNum)){
+        throw new TypeError('Input must be a number');
+      }
+      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+    } catch(err){
+      console.log('input error');
+      console.log(err);
+    }finally{
+      console.log('End');
+    }
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
 
